@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SanchoHelper - Privacy Policy</title>
+    <style>
+        :root {
+            --bg: #0a0a0f; --card: #12121a; --text: #c8c8d4;
+            --accent: #e94560; --gold: #f5c542; --border: #1e1e2e;
+            --glow: rgba(233, 69, 96, 0.3);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: var(--bg); color: var(--text);
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.9; min-height: 100vh; overflow-x: hidden;
+        }
+        body::before {
+            content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(ellipse at 20% 50%, rgba(233,69,96,0.08) 0%, transparent 50%),
+                        radial-gradient(ellipse at 80% 20%, rgba(245,197,66,0.06) 0%, transparent 50%),
+                        radial-gradient(ellipse at 50% 80%, rgba(100,100,255,0.05) 0%, transparent 50%);
+            pointer-events: none; z-index: 0;
+        }
+        .particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+        .particle { position: absolute; border-radius: 50%; animation: floatUp linear infinite; opacity: 0; }
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            10% { opacity: 1; } 90% { opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+        }
+        .container { max-width: 850px; margin: 0 auto; padding: 40px 25px; position: relative; z-index: 1; }
+        .header { text-align: center; padding: 50px 20px 30px; }
+        .shield-icon { font-size: 4em; animation: pulse 2s ease-in-out infinite; display: inline-block; }
+        @keyframes pulse {
+            0%,100% { transform: scale(1); filter: drop-shadow(0 0 20px var(--glow)); }
+            50% { transform: scale(1.1); filter: drop-shadow(0 0 40px var(--glow)); }
+        }
+        .header h1 { font-size: 2.8em; background: linear-gradient(135deg, #e94560, #f5c542); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin: 15px 0 5px; letter-spacing: -1px; }
+        .header .subtitle { color: #888; font-size: 1em; letter-spacing: 2px; text-transform: uppercase; }
+        .header .last-updated { display: inline-block; background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 6px 18px; font-size: 0.85em; color: #777; margin-top: 15px; }
+        .nav { display: flex; justify-content: center; gap: 8px; margin: 20px 0 40px; flex-wrap: wrap; }
+        .nav a { text-decoration: none; padding: 10px 22px; border-radius: 25px; font-weight: 600; font-size: 0.9em; transition: all 0.3s ease; }
+        .nav a.active { background: var(--accent); color: #fff; box-shadow: 0 0 25px var(--glow); }
+        .nav a:not(.active) { background: var(--card); color: #aaa; border: 1px solid var(--border); }
+        .nav a:hover:not(.active) { border-color: var(--accent); color: #fff; box-shadow: 0 0 15px rgba(233,69,96,0.2); }
+        .section { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 30px; margin-bottom: 20px; transition: all 0.3s ease; position: relative; overflow: hidden; }
+        .section::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: linear-gradient(180deg, var(--accent), var(--gold)); border-radius: 4px 0 0 4px; }
+        .section:hover { border-color: #333; box-shadow: 0 8px 32px rgba(0,0,0,0.4); transform: translateY(-2px); }
+        .section h2 { color: var(--gold); font-size: 1.3em; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .section h2 .num { background: var(--accent); color: #fff; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8em; font-weight: bold; }
+        .section p, .section li { color: #b0b0be; margin-bottom: 10px; }
+        .section ul { margin-left: 20px; }
+        .footer { text-align: center; padding: 40px 20px; color: #555; font-size: 0.85em; }
+        .footer a { color: var(--accent); text-decoration: none; }
+        .footer a:hover { color: var(--gold); }
+        ::-webkit-scrollbar { width: 6px; } ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: #2a2a3a; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+        @media (max-width:600px) { .header h1 { font-size: 2em; } .section { padding: 20px; } .nav a { padding: 8px 16px; font-size: 0.8em; } }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    <div class="container">
+        <div class="header">
+            <div class="shield-icon">🔒</div>
+            <h1>SanchoHelper</h1>
+            <p class="subtitle">Privacy Policy</p>
+            <span class="last-updated">📅 Last Updated: July 16, 2026</span>
+        </div>
+        <div class="nav">
+            <a href="index.html">Terms of Service</a>
+            <a href="privacy.html" class="active">Privacy Policy</a>
+        </div>
+        <div class="section">
+            <h2><span class="num">1</span> Data We Collect</h2>
+            <p>SanchoHelper stores only configuration and operational data per Discord server:</p>
+            <ul>
+                <li><strong>Server ID</strong> — To identify your server</li>
+                <li><strong>Role IDs</strong> — Owner role, staff roles, marked role</li>
+                <li><strong>Channel IDs</strong> — Log, welcome, and announcement channels</li>
+                <li><strong>Custom Messages</strong> — Welcome text you provide</li>
+                <li><strong>Appeal Records</strong> — User ID, reason, timestamp, status</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2><span class="num">2</span> What We NEVER Collect</h2>
+            <ul>
+                <li>Message content</li>
+                <li>Email addresses</li>
+                <li>IP addresses</li>
+                <li>Passwords or tokens</li>
+                <li>Any personal identifying information beyond Discord IDs</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2><span class="num">3</span> How Data Is Used</h2>
+            <p>All data is used exclusively for Bot functionality:</p>
+            <ul>
+                <li>Server ID → Load correct settings</li>
+                <li>Role IDs → Alert and ping correct staff</li>
+                <li>Channel IDs → Send logs to correct places</li>
+                <li>Appeal records → Process restriction appeals</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2><span class="num">4</span> Data Storage</h2>
+            <p>Data is stored in JSON files on the hosting server. We take reasonable precautions but cannot guarantee 100% security of any data storage method.</p>
+        </div>
+        <div class="section">
+            <h2><span class="num">5</span> Data Sharing</h2>
+            <p>We do <strong>NOT</strong> sell, trade, rent, or share your data with any third parties. Ever.</p>
+        </div>
+        <div class="section">
+            <h2><span class="num">6</span> Data Removal</h2>
+            <p>To request deletion of your server's data:</p>
+            <ul>
+                <li>Kick the Bot from your server (data becomes inactive)</li>
+                <li>Contact the creator for full deletion: Discord ID <code>1192124461281976361</code></li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2><span class="num">7</span> Children's Privacy</h2>
+            <p>The Bot is not directed at children under 13. By using the Bot, you confirm you meet Discord's minimum age requirement (13+).</p>
+        </div>
+        <div class="section">
+            <h2><span class="num">8</span> Changes</h2>
+            <p>This policy may be updated. Major changes will be announced via the Bot's update system. Continued use means acceptance.</p>
+        </div>
+        <div class="section">
+            <h2><span class="num">9</span> Contact</h2>
+            <p>Discord ID: <code>1192124461281976361</code></p>
+        </div>
+        <div class="footer">
+            <p>© 2026 <strong>SanchoHelper</strong>. Not affiliated with Discord Inc.</p>
+            <p><a href="#">Back to Top</a> · <a href="index.html">Terms of Service</a></p>
+        </div>
+    </div>
+    <script>
+        const pc = document.getElementById('particles');
+        const colors = ['#e94560','#f5c542','#7c7cff','#ff6b9d','#4ecdc4'];
+        setInterval(() => {
+            const p = document.createElement('div');
+            p.classList.add('particle');
+            const s = Math.random()*4+2;
+            p.style.cssText = `width:${s}px;height:${s}px;background:${colors[Math.floor(Math.random()*5)]};left:${Math.random()*100}%;animation-duration:${Math.random()*10+8}s;animation-delay:${Math.random()*5}s`;
+            pc.appendChild(p);
+            setTimeout(()=>p.remove(),15000);
+        },300);
+        document.querySelectorAll('a[href="#"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();window.scrollTo({top:0,behavior:'smooth'})}));
+    </script>
+</body>
+</html>
